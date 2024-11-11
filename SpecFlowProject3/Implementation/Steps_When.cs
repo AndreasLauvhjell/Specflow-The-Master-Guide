@@ -7,27 +7,18 @@ using System.Threading.Tasks;
 namespace SpecFlowProject3.Implementation
 {
     [Binding]
-    public class Steps_When
+    public class Steps_When : ContextHelper
     {
-        private ScenarioContext _scenarioContext;
-
-        public Steps_When(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
-
         [When(@"I click the Add to Basket button")]
         public void WhenIClickTheAddToBasketButton()
         {
-            var testingProduct = (ProductQuantities)_scenarioContext[ContextConstants.TESTINGPRODUCT];
-
-            if (testingProduct.Stock > 0 && testingProduct.Basket == 0)
+            if (ProductContext.TestingProduct.Stock > 0 && ProductContext.TestingProduct.Basket == 0)
             {
-                testingProduct.Basket++;
-                testingProduct.Stock--;
+                ProductContext.TestingProduct.Basket++;
+                ProductContext.TestingProduct.Stock--;
             }
 
-            _scenarioContext[ContextConstants.TESTINGPRODUCT] = testingProduct;
+            // NOE HER DIN IDIOT
         }
     }
 }

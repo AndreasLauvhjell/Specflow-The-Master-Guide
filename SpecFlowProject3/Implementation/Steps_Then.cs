@@ -8,21 +8,12 @@ using TechTalk.SpecFlow.Assist;
 namespace SpecFlowProject3.Implementation
 {
     [Binding]
-    public class Steps_Then
+    public class Steps_Then : ContextHelper
     {
-        private ScenarioContext _scenarioContext;
-
-        public Steps_Then(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
-
         [Then(@"the quantities are")]
         public void ThenTheQuantitiesAre(Table table)
         {
-            var comparisonList = (IEnumerable<ProductQuantities>)_scenarioContext[ContextConstants.PRODUCTQUANTITIES];
-            var testingProduct = (ProductQuantities)_scenarioContext[ContextConstants.TESTINGPRODUCT];
-            comparisonList = comparisonList.Where(t => t.ProductID == testingProduct.ProductID);
+            var comparisonList = ProductContext.ProductWithQuantities.Where(t => t.ProductID == ProductContext.TestingProduct.ProductID);
             table.CompareToSet<ProductQuantities>(comparisonList);
         }
 
