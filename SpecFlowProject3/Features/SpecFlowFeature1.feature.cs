@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowProject3
+namespace SpecFlowProject3.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -48,7 +48,7 @@ namespace SpecFlowProject3
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-GB"), "", "Shopping Basket", "  In order to amend my purchase before checking out, as a customer, I want to be " +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-GB"), "Features", "Shopping Basket", "  In order to amend my purchase before checking out, as a customer, I want to be " +
                     "able to edit my shopping basket", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -66,7 +66,7 @@ namespace SpecFlowProject3
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "Shopping Basket")))
             {
-                global::SpecFlowProject3.ShoppingBasketFeature.FeatureSetup(null);
+                global::SpecFlowProject3.Features.ShoppingBasketFeature.FeatureSetup(null);
             }
         }
         
