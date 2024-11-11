@@ -8,7 +8,6 @@ namespace SpecFlowProject3
 {
     public class ContextConstants
     {
-        public const string TESTINGPRODUCT = "TestingProduct";
-        public const string PRODUCTQUANTITIES = "ProductQuantities";
+        public const string TESTINGPRODUCTCONTEXT = "ProductContext";
     }
 }

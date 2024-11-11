@@ -10,27 +10,18 @@ using TechTalk.SpecFlow.UnitTestProvider;
 namespace SpecFlowProject3.Implementation
 {
     [Binding]
-    public class Steps_Given
+    public class Steps_Given : ContextHelper
     {
-        private ScenarioContext _scenarioContext;
-
-        public Steps_Given(ScenarioContext scenarioContext)
-        {
-            _scenarioContext = scenarioContext;
-        }
-
         [Given(@"I have the following data")]
         public void GivenIHaveTheFollowingData(Table table)
         {
-            var productQuantities = table.CreateSet<ProductQuantities>();
-            _scenarioContext.Add(ContextConstants.PRODUCTQUANTITIES, productQuantities);
+            ProductContext.ProductWithQuantities = table.CreateSet<ProductQuantities>();
         }
 
         [Given(@"I am on the product detail page of product (.*)")]
         public void GivenIAmOnTheProductDetailPageOfProduct(int productId)
         {
-            var testingProduct = ((IEnumerable<ProductQuantities>)_scenarioContext[ContextConstants.PRODUCTQUANTITIES]).FirstOrDefault(t => int.Parse(t.ProductID) == productId);
-            _scenarioContext.Add(ContextConstants.TESTINGPRODUCT, testingProduct);
+            ProductContext.TestingProduct = ProductContext.ProductWithQuantities.FirstOrDefault(t => int.Parse(t.ProductID) == productId);
 
         }
     }
