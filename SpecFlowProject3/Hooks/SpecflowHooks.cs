@@ -28,6 +28,10 @@ namespace SpecFlowProject3.Hooks
         {
             Service.Instance.ValueRetrievers.Register(new ClothesSizeRetriever());
             Service.Instance.ValueComparers.Register(new ClothesSizeComparer());
+            Service.Instance.ValueRetrievers.Register(new UserTypeRetriever());
+
+            Service.Instance.ValueRetrievers.Unregister<BoolValueRetriever>();
+            Service.Instance.ValueRetrievers.Register(new CustomBooleanValueRetriever());
 
             var location = testRunnerManager.TestAssembly.Location;
             var threadId = testRunner.ThreadId;

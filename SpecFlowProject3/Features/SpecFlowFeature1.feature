@@ -38,9 +38,9 @@
 
     Scenario: Customer can add an offer to the basket
         Given I have the following offer codes
-            | OfferCode | ExpiryDate | OfferType |
-            | CODE1     | 31/12/2024 | ByDate    |
-            | CODE2     | 15/12/2024 | ByDate    |
+            | OfferCode | ExpiryDate | OfferType | IsValid |
+            | CODE1     | 31/12/2024 | ByDate    | True    |
+            | CODE2     | 15/12/2024 | ByDate    | False   |
             And today is '01/12/2024'
 		When I add offer code 'CODE1' to the basket
         Then the offer is valid

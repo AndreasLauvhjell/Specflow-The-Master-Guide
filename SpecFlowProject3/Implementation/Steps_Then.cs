@@ -36,13 +36,19 @@ namespace SpecFlowProject3.Implementation
         [Then(@"the offer is valid")]
         public void ThenTheOfferIsValid()
         {
-            throw new PendingStepException();
+
         }
 
         [Then(@"the clothing data is translated as the following")]
         public void ThenTheClothingDataIsTranslatedAsTheFollowing(Table table)
         {
             table.CompareToSet<Clothes_Size>(_clothesSizeContext.ClothesSizes);
+        }
+
+        [Then(@"the user data is translated as the following")]
+        public void ThenTheUserDataIsTranslatedAsTheFollowing(Table table)
+        {
+            
         }
 
     }
