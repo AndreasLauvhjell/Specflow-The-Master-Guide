@@ -10,10 +10,12 @@ namespace SpecFlowProject3.Implementation
     public class Steps_When
     {
         private ProductTestDataContext _productTestDataContext;
+        private ClothesSizeContext _clothesSizeContext;
 
-        public Steps_When(ProductTestDataContext productTestDataContext)
+        public Steps_When(ProductTestDataContext productTestDataContext, ClothesSizeContext clothesSizeContext)
         {
             _productTestDataContext = productTestDataContext;
+            _clothesSizeContext = clothesSizeContext;
         }
 
         [When(@"I click the Add to Basket button")]
@@ -27,5 +29,12 @@ namespace SpecFlowProject3.Implementation
 
             // NOE HER DIN IDIOT
         }
+
+        [When(@"I add offer code '([^']*)' to the basket")]
+        public void WhenIAddOfferCodeToTheBasket(string p0)
+        {
+            throw new PendingStepException();
+        }
+
     }
 }

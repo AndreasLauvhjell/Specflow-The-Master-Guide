@@ -11,10 +11,13 @@ namespace SpecFlowProject3.Implementation
     public class Steps_Then
     {
         private ProductTestDataContext _productTestDataContext;
+        private ClothesSizeContext _clothesSizeContext;
 
-        public Steps_Then(ProductTestDataContext productTestDataContext)
+        public Steps_Then(ProductTestDataContext productTestDataContext, ClothesSizeContext clothesSizeContext)
         {
             _productTestDataContext = productTestDataContext;
+            _clothesSizeContext = clothesSizeContext;
+
         }
 
         [Then(@"the quantities are")]
@@ -29,5 +32,18 @@ namespace SpecFlowProject3.Implementation
         {
 
         }
+
+        [Then(@"the offer is valid")]
+        public void ThenTheOfferIsValid()
+        {
+            throw new PendingStepException();
+        }
+
+        [Then(@"the clothing data is translated as the following")]
+        public void ThenTheClothingDataIsTranslatedAsTheFollowing(Table table)
+        {
+            table.CompareToSet<Clothes_Size>(_clothesSizeContext.ClothesSizes);
+        }
+
     }
 }
