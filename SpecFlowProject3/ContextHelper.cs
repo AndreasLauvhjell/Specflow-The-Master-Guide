@@ -8,25 +8,14 @@ namespace SpecFlowProject3
 {
     public class ContextHelper : Steps
     {
-        protected ProductTestDataContext ProductContext
-        {
-            get
-            {
-                ProductTestDataContext result = new ProductTestDataContext();
-                result.ProductWithQuantities = new List<ProductQuantities>();
-                if(ScenarioContext.ContainsKey(ContextConstants.TESTINGPRODUCTCONTEXT) == false)
-                {
-                    result.ProductWithQuantities = new List<ProductQuantities>();
-                    ScenarioContext.Add(ContextConstants.TESTINGPRODUCTCONTEXT, result);
-                }
-                else
-                {
-                    result = (ProductTestDataContext)ScenarioContext[ContextConstants.TESTINGPRODUCTCONTEXT];
-                }
-
-                return result;
-            }
-        }
+        //Given, When, Then kan arve denne ved å bruke : ContextHelper. En annen måte å håndtere kontekst på.
+        //protected ProductTestDataContext ProductContext
+        //{
+        //    get
+        //    {
+        //        return ScenarioContext.ScenarioContainer.Resolve<ProductTestDataContext>();
+        //    }
+        //}
     }
 
     //Customercontext
