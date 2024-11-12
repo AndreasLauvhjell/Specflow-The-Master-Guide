@@ -96,28 +96,28 @@ namespace SpecFlowProject3.Features
         {
 #line 4
   #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ProductID",
                         "Stock",
                         "Basket"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "1",
                         "2",
                         "0"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "2",
                         "0",
                         "0"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "3",
                         "2",
                         "1"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "4",
                         "5",
                         "1"});
 #line 5
-    testRunner.Given("I have the following data", ((string)(null)), table3, "Given ");
+    testRunner.Given("I have the following data", ((string)(null)), table5, "Given ");
 #line hidden
         }
         
@@ -160,14 +160,14 @@ namespace SpecFlowProject3.Features
 #line 14
     testRunner.When("I click the Add to Basket button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Stock",
                             "Basket"});
-                table4.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             string.Format("{0}", stock),
                             string.Format("{0}", basket)});
 #line 15
-    testRunner.Then("the quantities are", ((string)(null)), table4, "Then ");
+    testRunner.Then("the quantities are", ((string)(null)), table6, "Then ");
 #line hidden
 #line 18
     testRunner.And(string.Format("a message {0} is displayed to the customer", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -255,34 +255,34 @@ namespace SpecFlowProject3.Features
 #line 4
   this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
                             "Value"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "ProductId",
                             "1"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Stock",
                             "2"});
-                table5.AddRow(new string[] {
+                table7.AddRow(new string[] {
                             "Basket",
                             "0"});
 #line 27
-    testRunner.Given("I have the following data", ((string)(null)), table5, "Given ");
+    testRunner.Given("I have the following data", ((string)(null)), table7, "Given ");
 #line hidden
 #line 32
     testRunner.When("I click the Add to Basket button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "ProductId",
                             "Stock",
                             "Basket"});
-                table6.AddRow(new string[] {
+                table8.AddRow(new string[] {
                             "1",
                             "1",
                             "1"});
 #line 33
-    testRunner.Then("the quantities are", ((string)(null)), table6, "Then ");
+    testRunner.Then("the quantities are", ((string)(null)), table8, "Then ");
 #line hidden
 #line 36
     testRunner.And("a message \'Added to basket\' is displayed to the customer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -322,20 +322,23 @@ namespace SpecFlowProject3.Features
 #line 4
   this.FeatureBackground();
 #line hidden
-                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                             "OfferCode",
                             "ExpiryDate",
-                            "OfferType"});
-                table7.AddRow(new string[] {
+                            "OfferType",
+                            "IsValid"});
+                table9.AddRow(new string[] {
                             "CODE1",
                             "31/12/2024",
-                            "ByDate"});
-                table7.AddRow(new string[] {
+                            "ByDate",
+                            "True"});
+                table9.AddRow(new string[] {
                             "CODE2",
                             "15/12/2024",
-                            "ByDate"});
+                            "ByDate",
+                            "False"});
 #line 40
-        testRunner.Given("I have the following offer codes", ((string)(null)), table7, "Given ");
+        testRunner.Given("I have the following offer codes", ((string)(null)), table9, "Given ");
 #line hidden
 #line 44
             testRunner.And("today is \'01/12/2024\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

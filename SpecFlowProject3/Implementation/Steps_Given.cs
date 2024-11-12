@@ -43,19 +43,25 @@ namespace SpecFlowProject3.Implementation
         [Given(@"today is '([^']*)'")]
         public void GivenTodayIs(DateTime today)
         {
-            throw new PendingStepException();
+
         }
 
         [Given(@"I have an offer with '([^']*)' and offertype of '([^']*)'")]
         public void GivenIHaveAnOfferWithAndOffertypeOf(string offerCode, OfferCodesType offerType)
         {
-            throw new PendingStepException();
+
         }
         
         [Given(@"I have the following clothes size data")]
         public void GivenIHaveTheFollowingClothesSizeData(Table table)
         {
             _clothesSizeContext.ClothesSizes = table.CreateSet<Clothes_Size>();
+        }
+
+        [Given(@"I have the following users")]
+        public void GivenIHaveTheFollowingUsers(Table table)
+        {
+            
         }
 
     }

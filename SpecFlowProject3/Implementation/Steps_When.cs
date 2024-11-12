@@ -33,7 +33,7 @@ namespace SpecFlowProject3.Implementation
         [When(@"I add offer code '([^']*)' to the basket")]
         public void WhenIAddOfferCodeToTheBasket(string p0)
         {
-            throw new PendingStepException();
+
         }
 
     }

@@ -40,6 +40,7 @@ namespace SpecFlowProject3
         public string OfferCode { get; set; }
         public DateTime ExpiryDate { get; set; }
         public OfferCodesType OfferCodeType { get; set; }
+        public bool IsValid { get; set; }
     }
 
     public enum OfferCodesType
@@ -61,5 +62,25 @@ namespace SpecFlowProject3
         public string InternalName { get; set; }
         public string Width { get; set; }
         public string Height { get; set; }
+    }
+
+    public enum UserTypeEnum
+    {
+        Supervisor,
+		Staff,
+		Customer,
+		Visitor
+    }
+
+    public class Users
+    {
+        public string Name { get; set; }
+        public User User { get; set; }
+    }
+
+    public class User
+    {
+        public string InternalName { get; set; }
+        public UserTypeEnum UserType { get; set; }
     }
 }
