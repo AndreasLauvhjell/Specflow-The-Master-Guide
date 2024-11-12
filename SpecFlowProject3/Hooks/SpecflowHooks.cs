@@ -26,6 +26,9 @@ namespace SpecFlowProject3.Hooks
         [BeforeTestRun]
         public static void BeforeTestRun(ITestRunnerManager testRunnerManager, ITestRunner testRunner)
         {
+            Service.Instance.ValueRetrievers.Register(new ClothesSizeRetriever());
+            Service.Instance.ValueComparers.Register(new ClothesSizeComparer());
+
             var location = testRunnerManager.TestAssembly.Location;
             var threadId = testRunner.ThreadId;
 

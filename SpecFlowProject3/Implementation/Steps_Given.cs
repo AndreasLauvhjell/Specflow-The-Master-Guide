@@ -13,10 +13,12 @@ namespace SpecFlowProject3.Implementation
     public class Steps_Given
     {
         private ProductTestDataContext _productTestDataContext;
+        private ClothesSizeContext _clothesSizeContext;
 
-        public Steps_Given(ProductTestDataContext productTestDataContext)
+        public Steps_Given(ProductTestDataContext productTestDataContext, ClothesSizeContext clothesSizeContext)
         {
             _productTestDataContext = productTestDataContext;
+            _clothesSizeContext = clothesSizeContext;
         }
 
         [Given(@"I have the following data")]
@@ -31,5 +33,30 @@ namespace SpecFlowProject3.Implementation
             _productTestDataContext.TestingProduct = _productTestDataContext.ProductWithQuantities.FirstOrDefault(t => int.Parse(t.ProductID) == productId);
 
         }
+
+        [Given(@"I have the following offer codes")]
+        public void GivenIHaveTheFollowingOfferCodes(Table table)
+        {
+            var result = table.CreateSet<OfferCodes>();
+        }
+
+        [Given(@"today is '([^']*)'")]
+        public void GivenTodayIs(DateTime today)
+        {
+            throw new PendingStepException();
+        }
+
+        [Given(@"I have an offer with '([^']*)' and offertype of '([^']*)'")]
+        public void GivenIHaveAnOfferWithAndOffertypeOf(string offerCode, OfferCodesType offerType)
+        {
+            throw new PendingStepException();
+        }
+        
+        [Given(@"I have the following clothes size data")]
+        public void GivenIHaveTheFollowingClothesSizeData(Table table)
+        {
+            _clothesSizeContext.ClothesSizes = table.CreateSet<Clothes_Size>();
+        }
+
     }
 }
